@@ -597,7 +597,7 @@ body, html {
     }
 
     .s1_layout_wrapper {
-        max-height: none;
+        height: 90vh;
         gap: 10px;
     }
 
@@ -656,12 +656,6 @@ body, html {
             opacity: 1;
         }
     }
-    
-    #bruins-logo{
-        width: 150px;
-        height: 84px;
-        padding-top: 10px;
-    }
 
     #slide2 .slide-title,
     #slide3 .slide-title,
@@ -801,7 +795,7 @@ body, html {
     }
 
     .arrow-button-1 {
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     .arrow-button {
@@ -818,7 +812,7 @@ body, html {
 }
 
 
-@media (min-width: 500px) and (max-width: 2048px) {
+@media (min-width: 500px) and (max-width: 1024px) {
 
 
     .s1_nav-bar {
@@ -832,7 +826,7 @@ body, html {
     }
 
     .s1_layout_wrapper {
-        max-height: none;
+        height: 80vh;
         gap: 10px;
     }
 
@@ -891,12 +885,6 @@ body, html {
             opacity: 1;
         }
     }
-    
-    #bruins-logo{
-        width: 150px;
-        height: 84px;
-        padding-top: 10px;
-    }
 
     #slide2 .slide-title,
     #slide3 .slide-title,
@@ -1036,7 +1024,7 @@ body, html {
     }
 
     .arrow-button-1 {
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     .arrow-button {
