@@ -1,0 +1,1052 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Concert+One&family=Patrick+Hand&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.slide {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+#slide1 { 
+    background-color: #e8e8e8; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#slide1 span {
+    display: block;
+}
+
+.s1_nav-bar {
+    /* Fixed top position*/
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Flex block for buttons */
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    /*Misc Properties */
+    padding: 2vh 2.5vw;
+    background: transparent;
+}
+
+
+.s1_nav-bar a{
+    /* Text properties */
+    font-size: clamp(10px, 1.5vw, 18px);        
+    /*font-family: 'Courier New', Courier, monospace;*/
+    font-family: century-gothic, sans-serif;
+    font-weight: bolder;
+    color: #000000;
+    /* Shape properties */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* Position properties */
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &:hover {
+        color: #D1B000;
+    }
+}
+
+.s1_layout_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.s1_layout_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);  /* responsive gap */
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;             /* leave room for nav + arrow, adjust if needed */
+  overflow: hidden;
+}
+
+.s1_image_strip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(6px, 1.2vw, 12px);
+  flex: 0 1 18%;                /* allow strip to shrink; grow disabled */
+  min-width: 120px;             /* avoid becoming too narrow */
+  align-items: center;
+}
+
+
+.s1_image_strip img {
+  width: clamp(80px, 20w, 200px);  /* scales with viewport */
+  height: clamp(80px, 20vh, 200px);
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(100%);
+}
+
+.s1_center_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 40%;               /* can grow and shrink to fit */
+  box-sizing: border-box;
+  gap: 1vh;
+}
+
+#s1_spacingText {
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 0.5vh;
+    font-size: clamp(28px, 8vw, 160px); /* responsive: small -> large */
+    letter-spacing: clamp(0px, 0.6vw, 15px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: text 3s 1;
+}
+
+@keyframes text {
+    30%{
+        letter-spacing: 15px;
+    }
+}
+
+#s1_fadeLine {
+    width: min(100%, 95%);
+    margin: 0 auto 1.5vh;
+    border: none;
+    border-top: clamp(6px, 3.2vw, 40px) solid #000;
+    border-radius: 0 0 15px 15px;
+    opacity: 0;
+    animation: fadeLine 3s forwards;
+}
+
+
+@keyframes fadeLine {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+#s1_dropDownText {
+    font-family: "Concert One", sans-serif;
+    font-size: clamp(14px, 4.8vw, 80px);
+    font-weight: 300;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation-name: altname;
+    animation-duration: 3s;
+}
+
+
+@keyframes altname {
+    0%{
+        opacity: 0;
+        transform: translateY(-57px);
+    }
+    25%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#bruins-logo{
+    width: 300px;
+    height: 168px;
+}
+
+#slide2 { 
+    background-color: #2774AE;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#slide2 .slide-title,
+#slide3 .slide-title,
+#slide4 .slide-title,
+#slide5 .slide-title {
+    opacity: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: century-gothic, sans-serif;;
+    color:#D1B000;
+}
+
+.animate-on-view {
+    animation-duration: 3s;
+    animation-fill-mode: forwards; /* This ensures that the styles applied by the animation are retained after it finishes */
+}
+
+#slide2 .slide-title.animate-on-view {
+    animation-name: altname;
+}
+
+#transparentCover{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+}
+
+.s2-content-container {
+    display: flex;
+    width: 100%;
+}
+
+.s2-text-content {
+    text-align: left;
+    flex: 1;
+    margin-top: 25vh;
+    margin-left: 8vw;
+}
+
+#s2-maintext {
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+#s2-alttext {
+    font-family: century-gothic, sans-serif;
+    color: #AFAFAF;
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+.s2-image-content {
+    flex: 1;
+}
+
+
+.s2-image-content img{
+    margin-top: 20vh;
+    width: 350px;
+    height: 480px;
+}
+
+#slide3 { 
+    background-color: #2774AE;
+    display: flex;
+    flex-direction: column;
+}
+
+#slide3 .slide-title.animate-on-view {
+    animation-name: altname;
+}
+
+.s3-content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#s3-maintext {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 40px;
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+#s3-subheading {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 40px;
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+#s3-coursesSys {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+#s3-buttonsContainer {
+    width: 353px;
+    text-align: left;
+}
+
+.s3-coursesbtn{
+    text-align: left;
+    font-family: century-gothic, sans-serif;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border-style: none;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    margin-left: 50px;
+    width:auto;
+    padding-bottom: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color:#D1B000;
+    }
+}
+
+#s3-coursesList{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    grid-template-rows: repeat(auto-fill, minmax(15px, auto));
+
+    background-color: rgba(0,0,0,0);
+    height: 225px;
+    text-align: left;
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right:30px;
+}
+
+#s3-coursesList span{
+    padding: 5px;
+}
+
+.vl {
+    border-left: 2px solid white;
+    height: 250px;
+}
+
+#slide4 { 
+    background-color: #2774AE;
+    display: flex;
+    flex-direction: column;
+}
+
+#slide4 .slide-title.animate-on-view {
+    animation-name: altname;
+}
+
+.s4-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#s4-maintext {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+#s4-linkList {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+#s4-linkList img {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-right: 25px;
+    margin-left: 25px;
+    color:#D1B000;
+}
+
+.s4-slideshow-container {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+}
+
+.s4-slide {
+    display: none;
+}
+
+.s4-active-slide {
+    display: block;
+}
+.s4-slide img {
+    width: 800px;
+    height: auto;
+}
+
+.s4-indicator-container {
+    text-align: center;
+}
+.s4-indicator {
+    display: inline-block;
+    border-left: 2px solid white;
+    height: 10px;
+    background-color: #bbb;
+    margin: 5px;
+    cursor: pointer;
+}
+.s4-active-indicator {
+    border-left: 2px solid #717171;
+}
+
+#slide5 { 
+    background: #383838;
+    display: flex;
+    flex-direction: column;
+}
+
+#slide5 .slide-title.animate-on-view {
+    animation-name: altname;
+}
+
+.s5-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#s5-maintext {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-family: century-gothic, sans-serif;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 1000;
+    font-style: bold;
+}
+
+#s5-linkList {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+#s5-linkList img {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-right: 25px;
+    margin-left: 25px;
+    color:#D1B000;
+}
+
+.s5-slideshow-container {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: auto;
+}
+
+.s5-slide {
+    display: none;
+}
+
+.s5-active-slide {
+    display: block;
+}
+.s5-slide img {
+    width: 500px;
+    height: auto;
+}
+
+.s5-indicator-container {
+    text-align: center;
+}
+.s5-indicator {
+    display: inline-block;
+    border-left: 2px solid white;
+    height: 10px;
+    background-color: #bbb;
+    margin: 5px;
+    cursor: pointer;
+}
+.s5-active-indicator {
+    border-left: 2px solid #717171;
+}
+
+.indicators {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 5px;
+    cursor: pointer;
+}
+.indicator.active {
+    background: #333;
+}
+
+.bruins-span {
+    align-items: center;
+    flex-grow: 1;
+}
+
+.arrow-button-1 {
+    margin-top: auto;
+    padding-bottom: 0px;
+}
+
+.arrow-button-1 button {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 40px;
+    color: white;
+    &:hover {
+        color:#D1B000;
+    }
+}
+
+.arrow-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: auto;
+    padding-bottom: 0px;
+}
+
+.arrow-button button {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 40px;
+    color: white;
+    &:hover {
+        color:#D1B000;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .s1_nav-bar {
+        padding-right: 5px;
+    }
+
+    .s1_nav-bar a{
+        font-size: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .s1_layout_wrapper {
+        max-height: none;
+        gap: 10px;
+    }
+
+    .s1_center_content {
+        gap: 0.5vh;
+    }
+
+
+    .s1_image_strip img {
+        max-width: 10vh;
+        max-height: 10vh;
+    }
+
+
+    #s1_spacingText {
+        font-size: 4.5vw;
+        letter-spacing: 0.6vw;
+        white-space: normal;
+        text-align: center;
+    }
+
+    
+    @keyframes text {
+        30%{
+            letter-spacing: 0.60vw;
+        }
+    }
+
+    #s1_fadeLine {
+        width: min(100%, 100%);
+        border-top: 2vw solid #000;
+        margin: 0 auto 0.5vh;
+    }
+
+    
+    #s1_dropDownText {
+        font-size: 3vw;
+        text-align: center;
+    }
+    
+    @keyframes altname {
+        0%{
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        25%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        75%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    #bruins-logo{
+        width: 150px;
+        height: 84px;
+        padding-top: 10px;
+    }
+
+    #slide2 .slide-title,
+    #slide3 .slide-title,
+    #slide4 .slide-title,
+    #slide5 .slide-title {
+        padding-top: 15px;
+        font-size: 12px;
+    }
+
+    .s2-text-content {
+        margin-top: 25vh;
+        margin-left: 8vw;
+    }
+
+    #s2-maintext {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+    
+    #s2-alttext {
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+    
+    .s2-image-content img{
+        margin-top: 26vh;
+        width: 140px;
+        height: 192px;
+    }
+
+    #s3-maintext {
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s3-subheading {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+    
+    #s3-coursesSys {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #s3-buttonsContainer {
+        width: 120px;
+    }
+    
+    .s3-coursesbtn{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #s3-coursesList{
+        gap: 10px;
+        grid-template-rows: repeat(auto-fill, minmax(25px, auto));
+    
+        background-color: rgba(0,0,0,0);
+        height: 350px;
+        padding-left: 10px;
+        
+        font-size: 12px;
+
+    }
+
+    #s3-coursesList span{
+        padding: 2px;
+    }
+    
+    .vl {
+        height: 350px;
+    }
+
+    #s4-maintext {
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s4-subheading {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    
+    #s4-linkList img {
+        margin-bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .s4-slideshow-container {
+        max-width: 350px;
+    }
+    
+    .s4-slide img {
+        width: 320px;
+        height: auto;
+    }
+    
+    #s5-maintext {
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s5-linkList img {
+        margin-bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .s5-slideshow-container {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .s5-slide img {
+        width: 320px;
+        height: auto;
+    }
+
+    .indicators {
+        right: 10px;
+    }
+
+    .indicator {
+        width: 5px;
+        height: 5px;
+    }
+
+    .arrow-button-1 {
+        padding-bottom: 20px;
+    }
+
+    .arrow-button {
+        padding-bottom: 20px;
+    }
+
+    .arrow-button-1 button {
+        font-size: 25px;
+    }
+
+    .arrow-button button {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .s1_nav-bar {
+        padding-right: 5px;
+    }
+
+    .s1_nav-bar a{
+        font-size: 2vw;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .s1_layout_wrapper {
+        max-height: none;
+        gap: 10px;
+    }
+
+    .s1_center_content {
+        gap: 0.5vh;
+    }
+
+
+    .s1_image_strip img {
+        max-width: 10vh;
+        max-height: 10vh;
+    }
+
+
+    #s1_spacingText {
+        font-size: 8vw;
+        letter-spacing: 0.6vw;
+        white-space: normal;
+        text-align: center;
+    }
+
+    
+    @keyframes text {
+        30%{
+            letter-spacing: 0.60vw;
+        }
+    }
+
+    #s1_fadeLine {
+        width: min(100%, 90%);
+        border-top: 2vw solid #000;
+        margin: 0 auto 0.5vh;
+    }
+
+    
+    #s1_dropDownText {
+        font-size: 4.5vw;
+        text-align: center;
+    }
+    
+    @keyframes altname {
+        0%{
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        25%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        75%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    #bruins-logo{
+        width: 150px;
+        height: 84px;
+        padding-top: 10px;
+    }
+
+    #slide2 .slide-title,
+    #slide3 .slide-title,
+    #slide4 .slide-title,
+    #slide5 .slide-title {
+        padding-top: 15px;
+        font-size: 12px;
+    }
+
+    .s2-text-content {
+        margin-top: 25vh;
+        margin-left: 8vw;
+    }
+
+    #s2-maintext {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+    
+    #s2-alttext {
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+    
+    .s2-image-content img{
+        margin-top: 26vh;
+        width: 140px;
+        height: 192px;
+    }
+
+    #s3-maintext {
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s3-subheading {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+    
+    #s3-coursesSys {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #s3-buttonsContainer {
+        width: 120px;
+    }
+    
+    .s3-coursesbtn{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #s3-coursesList{
+        gap: 10px;
+        grid-template-rows: repeat(auto-fill, minmax(25px, auto));
+    
+        background-color: rgba(0,0,0,0);
+        height: 350px;
+        padding-left: 10px;
+        
+        font-size: 12px;
+
+    }
+
+    #s3-coursesList span{
+        padding: 2px;
+    }
+    
+    .vl {
+        height: 350px;
+    }
+
+    #s4-maintext {
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s4-subheading {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    
+    #s4-linkList img {
+        margin-bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .s4-slideshow-container {
+        max-width: 350px;
+    }
+    
+    .s4-slide img {
+        width: 320px;
+        height: auto;
+    }
+    
+    #s5-maintext {
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #s5-linkList img {
+        margin-bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .s5-slideshow-container {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .s5-slide img {
+        width: 320px;
+        height: auto;
+    }
+
+    .indicators {
+        right: 10px;
+    }
+
+    .indicator {
+        width: 5px;
+        height: 5px;
+    }
+
+    .arrow-button-1 {
+        padding-bottom: 20px;
+    }
+
+    .arrow-button {
+        padding-bottom: 20px;
+    }
+
+    .arrow-button-1 button {
+        font-size: 25px;
+    }
+
+    .arrow-button button {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>TRISTAN ELLIS</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khmer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+</head>
+
+<body>
+
+    <div id="slide1" class="slide">
+        <div class = "s1_nav-bar">
+            <a href = "https://www.linkedin.com/in/chandaralong-phe/" target="_blank">
+                LinkedIn
+            </a>
+            <!-- <a href = "https://github.com/dylanphe" target="_blank">
+                Tiktok
+            </a> -->
+            <a href = "https://www.instagram.com/tristanellis812/" target="_blank">
+                Instagram
+            </a>
+            <a href = "mailto:tristanellis812@yahoo.com">
+                Email
+            </a>
+            <a href = "resume.pdf" target="_blank">
+                Resume
+            </a>
+        </div>
+
+        <div class="s1_layout_wrapper">
+            <div class="s1_image_strip left_strip">
+                <img src="image/bnw/img1.jpg" alt="Left 1">
+                <img src="image/bnw/img2.jpg" alt="Left 2">
+                <img src="image/bnw/img5.JPG" alt="Left 3">
+                <img src="image/bnw/img4.JPG" alt="Left 4">
+            </div>
+        
+            <div class="s1_center_content">
+                <span id="s1_spacingText">TRISTAN ELLIS</span>
+                <hr id="s1_fadeLine">
+                <span id="s1_dropDownText">FILMMAKER/PHOTOGRAPHER</span>
+            </div>
+        
+            <div class="s1_image_strip right_strip">
+                <img src="image/bnw/img8.jpg" alt="Right 1">
+                <img src="image/bnw/img6.jpg" alt="Right 2">
+                <img src="image/bnw/img3.jpg" alt="Right 3">
+                <img src="image/bnw/img7.jpg" alt="Right 4">
+            </div>
+        </div>
+        
+    
+        <span class = "arrow-button-1">
+            <button onclick="debouncedDownClick()">▼</button>
+        </span>
+    </div>
+
+
+    <div id="slide2" class="slide">
+        <div id= "transparentCover">
+            <div class = "slide-title">Tristan Ellis - About Me</div>
+            <div class="s2-content-container">
+                <div class="s2-text-content">
+                    <p id="s2-maintext">[PlaceHolder]</p>
+                    <p id="s2-maintext">[PlaceHolder]</p>
+                    <p id="s2-alttext">Coded by Dylan Phe.</p>
+                </div>
+                <div class="s2-image-content">
+                    <img src="image/Headshot.jpg" alt="tristan's photo">
+                </div>
+            </div>
+        </div>
+        <span class = "arrow-button">
+            <button onclick="debouncedUpClick()">▲</button>
+            <button onclick="debouncedDownClick()">▼</button>
+        </span>
+    </div>
+
+    <div id="slide3" class="slide">
+        <div id= "transparentCover">
+            <div class = "slide-title">Tristan Ellis - Education:</div>
+            <div class="s3-content-container">
+                <p id="s3-maintext"> [PlaceHolder] </p>
+                <!-- <p id="s3-subheading"> <b>Courseworks taken</b> </p> -->
+
+                <!-- <div id = "s3-coursesSys">
+                    <div id="s3-buttonsContainer">
+                        <button id="mathBtn" class="s3-coursesbtn" onclick="showMATH()"> Mathematics </button>
+                        <br>
+                        <button id="physicsBtn" class="s3-coursesbtn" onclick="showPHYS()"> Physics </button>
+                        <br>
+                        <button id="csBtn" class="s3-coursesbtn" onclick="showCS()"> Computer Science </button>
+                        <br>
+                        <button id="eceBtn" class="s3-coursesbtn" onclick="showECE()"> Electrical and Computer Engineering </button>
+                        <br>
+                        <button id="engrBtn" class="s3-coursesbtn" onclick="showENGR()"> Engineering Ethics </button>
+                    </div>
+                    <div class="vl"></div>
+                    <div id="s3-coursesList">(Click on the subjects to expand)</div>
+                </div> -->
+                <br>
+            </div>
+        </div>
+        <span class = "arrow-button">
+            <button onclick="debouncedUpClick()">▲</button>
+            <button onclick="debouncedDownClick()">▼</button>
+        </span>
+    </div>
+
+    <div id="slide4" class="slide">
+        <div id= "transparentCover">
+            <div class = "slide-title">Tristan Ellis - Projects</div>
+            <div class="s4-content-container">
+                <p id="s4-maintext"> [PlaceHolder] </p>
+                <div id="s4-linkList">
+                    <a href="test.pdf" target="_blank">
+                        <img src="image/report.png" alt="Button Image" style="cursor: pointer;">
+                    </a>
+                    <a href="test" target="_blank">
+                        <img src="image/git.png" alt="Button Image" style="cursor: pointer;">
+                    </a>
+                </div>
+                <div class="s4-slideshow-container">
+                    <!-- Slides -->
+                    <div class="s4-slide s4-active-slide">
+                        <img src="test.png" alt="Image 1">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 2">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 3">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 4">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 5">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 6">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 7">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 8">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 9">
+                    </div>
+                    <div class="s4-slide">
+                        <img src="test.png" alt="Image 10">
+                    </div>
+                    <!-- Add more slides as needed -->
+
+                    <!-- Slide Indicators -->
+                    <div class="s4-indicator-container">
+                        <span class="s4-indicator s4-active-indicator" onclick="currentSlide(0)"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                        <span class="s4-indicator"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class = "arrow-button">
+            <button onclick="debouncedUpClick()">▲</button>
+            <button onclick="debouncedDownClick()">▼</button>
+        </span>
+    </div>
+
+    <div id="slide5" class="slide">
+        <div id= "transparentCover">
+            <div class = "slide-title">Tristan Ellis - Artworks</div>
+            <div class="s5-content-container">
+                <p id="s5-maintext">I'm not a professional artist but I do love to paint during my free time so, here are some of my artworks.</p>
+                <div class="s5-slideshow-container">
+                    <!-- Slides -->
+                    <div class="s5-slide s5-active-slide">
+                        <img src="test.jpg" alt="Image 1">
+                    </div>
+                    <div class="s5-slide">
+                        <img src="test.jpg" alt="Image 2">
+                    </div>
+                    <div class="s5-slide">
+                        <img src="test.jpg" alt="Image 3">
+                    </div>
+                    <div class="s5-slide">
+                        <img src="test.jpg" alt="Image 3">
+                    </div>
+                    <!-- Add more slides as needed -->
+
+                    <!-- Slide Indicators -->
+                    <div class="s5-indicator-container">
+                        <span class="s5-indicator s5-active-indicator" onclick="currentSlide(0)"></span>
+                        <span class="s5-indicator"></span>
+                        <span class="s5-indicator"></span>
+                        <span class="s5-indicator"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class = "arrow-button">
+            <button onclick="debouncedUpClick()">▲</button>
+        </span>
+    </div>
+
+    <div class="indicators">
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+    </div>
+
+
+    <script>
+        // Porfolio slides
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+
+        let currentSlide = 1;
+        const indicators = document.querySelectorAll('.indicator');
+        function updateIndicators(currentSlide) {
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide - 1) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        updateIndicators(currentSlide);
+
+        const debouncedScroll = debounce(function(event) {
+            if (event.deltaY > 0 && currentSlide < 5) {
+                currentSlide++;
+            } else if (event.deltaY < 0 && currentSlide > 1) {
+                currentSlide--;
+            }
+            document.getElementById('slide' + currentSlide).scrollIntoView({behavior: 'smooth'});
+            updateIndicators(currentSlide);
+        }, 225, false);
+
+        const debouncedDownClick = debounce(function(event) {
+            if (currentSlide < 5) {
+                currentSlide++;
+            }
+            document.getElementById('slide' + currentSlide).scrollIntoView({behavior: 'smooth'});
+            updateIndicators(currentSlide);
+        }, 225, false);
+
+        const debouncedUpClick = debounce(function(event) {
+            if (currentSlide > 1) {
+                currentSlide--;
+            }
+            document.getElementById('slide' + currentSlide).scrollIntoView({behavior: 'smooth'});
+            updateIndicators(currentSlide);
+        }, 225, false);
+
+        window.addEventListener('wheel', debouncedScroll);
+
+        // Animated slide titles
+        let observerOptions = {
+            threshold: 0.5 // Adjust the threshold value as needed
+        };
+
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let slideTitle = entry.target.querySelector('.slide-title');
+                    if (slideTitle) {
+                        slideTitle.style.opacity = '1';
+                        slideTitle.classList.add('animate-on-view');
+                    }
+                } else {
+                    let slideTitle = entry.target.querySelector('.slide-title');
+                    if (slideTitle) {
+                        slideTitle.style.opacity = '0';
+                        slideTitle.classList.remove('animate-on-view');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        let slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => {
+            observer.observe(slide);
+        });
+
+        // Course List Implementation
+        var x = document.getElementById("s3-csList");
+        var y = document.getElementById("s3-eceList");
+        var z = document.getElementById("s3-mathList");
+        var a = document.getElementById("s3-physicsList");
+        var b = document.getElementById("s3-engrList");
+
+        var mathList = `
+        <span> Single-Variable Calculus </span>
+        <span> Multivariable Calculus </span>
+        <span> Linear Algebra </span>
+        <span> Differential Equations </span>
+        <span> Introduction to Probability </span>
+        <span> Intro to Discrete Math </span>
+        <span> Nonlinear Dynamic and Chaos </span>
+        <span> Mathematical Modeling </span>
+        <span> Machine Learning </span>
+        `;
+
+        // var mathList = `
+        // <span> Single-Variable Calculus (MATH 31A/B) </span>
+        // <span> Multivariable Calculus (MATH 32A/B)  </span>
+        // <span> Linear Algebra (MATH 33A)  </span>
+        // <span> Differential Equations (MATH 33B)  </span>
+        // <span> Introduction to Probability (STATS 100A) </span>
+        // <span> Intro to Discrete Math (MATH 61)  </span>
+        // <span> Nonlinear Dynamic and Chaos (MATH 134) </span>
+        // <span> Mathematical Modeling (MATH 142) </span>
+        // <span> Machine Learning (MATH 156) </span>
+        // `;
+
+        var physicsList = `
+        <span> Mechanics </span>
+        <span> Fluids, Oscillations, Waves, and Electricity  </span>
+        <span> Magnetism, Electrodynamics, Optics, and Special Relativity </span>
+        <span> Physics Laboratory for Scientists and Engineers: Mechanics </span>
+        `;
+
+        // var physicsList = `
+        // <span> Mechanics  (PHYSICS 1A) </span>
+        // <span> Fluids, Oscillations, Waves, and Electricity (PHYSICS 1B)  </span>
+        // <span> Magnetism, Electrodynamics, Optics, and Special Relativity (PHYSICS 1C) </span>
+        // <span> Physics Laboratory for Scientists and Engineers: Mechanics (PHYSICS 4AL)  </span>
+        // `;
+
+        var csList = `
+        <span>Intro to Computer Science </span>
+        <span> Data Structures </span>
+        <span> Intro to Computer Architecture </span>
+        <span> Logic Design of Digital System </span>
+        <span> Digital Design Lab </span>
+        <span> Computer Systems Architecture </span>
+        <span> Algorithm & Complexity </span>
+        <span> Formal Languages & Automata </span>
+        <span> Software Construction </span>
+        <span> Operating Systems Principle </span>
+        <span> Computer Network Fundamental </span>
+        <span> Programming Languages </span>
+        <span> Software Engineering </span>
+        <span> Computer Security </span>
+        <span> Data Management Systems </span>
+        <span> Introduction to Data Mining </span>
+        <span> Artificial Intelligence </span>
+        <span> Introduction to Computer Graphics </span>
+        `;
+
+        // var csList = `
+        // <span>Intro to Computer Science (CS 31)</span>
+        // <span> Data Structures (CS 32) </span>
+        // <span> Intro to Computer Architecture (CS 33) </span>
+        // <span> Logic Design of Digital System (CS M51A) </span>
+        // <span> Digital Design Lab (CS M15AB) </span>
+        // <span> Computer Systems Architecture (CS M152B) </span>
+        // <span> Algorithm & Complexity (CS 180) </span>
+        // <span> Formal Languages & Automata (CS 181) </span>
+        // <span> Software Construction (CS 35L) </span>
+        // <span> Operating Systems Principle (CS 111) </span>
+        // <span> Computer Network Fundamental (CS 118) </span>
+        // <span> Programming Languages (CS 131) </span>
+        // <span> Software Engineering (CS 130) </span>
+        // <span> Computer Security (CS 136) </span>
+        // <span> Data Management Systems (CS 143) </span>
+        // <span> Introduction to Data Mining (CS 145) </span>
+        // <span> Artificial Intelligence (CS 161) </span>
+        // <span> Introduction to Computer Graphics (CS 174A) </span>
+        // `;
+
+        var eceList = `
+        <span> Intro to Electrical Engineering </span>
+        <span> Electrical and Electronic Circuits </span>
+        <span> Engineering Electromagnetics </span>
+        `;
+
+        // var eceList = `
+        // <span> Intro to Electrical Engineering (ECE 3) </span>
+        // <span> Electrical and Electronic Circuits (ECE 100)  </span>
+        // <span> Engineering Electromagnetics (ECE 101A)  </span>
+        // `;
+
+        var engrList = `
+        <span> Engineering and Society </span>
+        `;
+
+        // var engrList = `
+        // <span> Engineering and Society (ENGR 183EW) </span>
+        // `;
+
+        function showCS() {
+            document.getElementById("s3-coursesList").innerHTML = csList;
+            document.getElementById("csBtn").style.color = '#D1B000';
+            document.getElementById("eceBtn").style.color = 'white';
+            document.getElementById("engrBtn").style.color = 'white';
+            document.getElementById("mathBtn").style.color = 'white';
+            document.getElementById("physicsBtn").style.color = 'white';
+        }
+
+        function showECE() {
+            document.getElementById("s3-coursesList").innerHTML = eceList;
+            document.getElementById("eceBtn").style.color = '#D1B000';
+            document.getElementById("csBtn").style.color = 'white';
+            document.getElementById("engrBtn").style.color = 'white';
+            document.getElementById("mathBtn").style.color = 'white';
+            document.getElementById("physicsBtn").style.color = 'white';
+        }
+        function showMATH() {
+            document.getElementById("s3-coursesList").innerHTML = mathList;
+            document.getElementById("mathBtn").style.color = '#D1B000';
+            document.getElementById("eceBtn").style.color = 'white';
+            document.getElementById("engrBtn").style.color = 'white';
+            document.getElementById("csBtn").style.color = 'white';
+            document.getElementById("physicsBtn").style.color = 'white';
+        }
+        function showPHYS() {
+            document.getElementById("s3-coursesList").innerHTML = physicsList;
+            document.getElementById("physicsBtn").style.color = '#D1B000';
+            document.getElementById("eceBtn").style.color = 'white';
+            document.getElementById("engrBtn").style.color = 'white';
+            document.getElementById("mathBtn").style.color = 'white';
+            document.getElementById("csBtn").style.color = 'white';
+        }
+        function showENGR() {
+            document.getElementById("s3-coursesList").innerHTML = engrList;
+            document.getElementById("engrBtn").style.color = '#D1B000';
+            document.getElementById("eceBtn").style.color = 'white';
+            document.getElementById("csBtn").style.color = 'white';
+            document.getElementById("mathBtn").style.color = 'white';
+            document.getElementById("physicsBtn").style.color = 'white';
+        }
+
+        let s4CurrentSlideIndex = 0;
+        const s4Slides = document.querySelectorAll('.s4-slide');
+        console.log(s4Slides.length);
+        const s4Indicators = document.querySelectorAll('.s4-indicator');
+        function s4ShowNextSlide() {
+            // Hide the current slide
+            s4Slides[s4CurrentSlideIndex].classList.remove('s4-active-slide');
+            s4Indicators[s4CurrentSlideIndex].classList.remove('s4-active-indicator');
+            // Increment the index to show the next slide
+            s4CurrentSlideIndex = (s4CurrentSlideIndex + 1) % (s4Slides.length);
+            console.log(s4CurrentSlideIndex);
+            // Show the next slide
+            s4Slides[s4CurrentSlideIndex].classList.add('s4-active-slide');
+            s4Indicators[s4CurrentSlideIndex].classList.add('s4-active-indicator');
+        }
+
+        // Add click event listener to each slide
+        s4Slides.forEach(s4Slide => {
+            s4Slide.addEventListener('click', s4ShowNextSlide);
+        });
+
+        let s5CurrentSlideIndex = 0;
+        const s5Slides = document.querySelectorAll('.s5-slide');
+        console.log(s5Slides.length);
+        const s5Indicators = document.querySelectorAll('.s5-indicator');
+        function s5ShowNextSlide() {
+            // Hide the current slide
+            s5Slides[s5CurrentSlideIndex].classList.remove('s5-active-slide');
+            s5Indicators[s5CurrentSlideIndex].classList.remove('s5-active-indicator');
+            // Increment the index to show the next slide
+            s5CurrentSlideIndex = (s5CurrentSlideIndex + 1) % (s5Slides.length);
+            console.log(s5CurrentSlideIndex);
+            // Show the next slide
+            s5Slides[s5CurrentSlideIndex].classList.add('s5-active-slide');
+            s5Indicators[s5CurrentSlideIndex].classList.add('s5-active-indicator');
+        }
+
+        // Add click event listener to each slide
+        s5Slides.forEach(s5Slide => {
+            s5Slide.addEventListener('click', s5ShowNextSlide);
+        });
+    </script>
+</body>
+</html>
