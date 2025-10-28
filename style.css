@@ -818,7 +818,8 @@ body, html {
 }
 
 
-@media (max-width: 900px) {
+@media (min-width: 500px) and (max-width: 900px) {
+
 
     .s1_nav-bar {
         padding-right: 5px;
