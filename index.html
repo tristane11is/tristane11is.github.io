@@ -122,10 +122,13 @@
                         <img id="TheFalloftheHouseOfMurdaughPoster" src="image/TheFalloftheHouseOfMurdaugh.jpg" alt="Poster 4" style="cursor: pointer;">
                     </a>
                     <a>
-                        <img id="DisruptAndDismantlePoster" src="image/DisruptAndDismantle.jpg" alt="Poster 4" style="cursor: pointer;">
+                        <img id="DisruptAndDismantlePoster" src="image/DisruptAndDismantle.jpg" alt="Poster 5" style="cursor: pointer;">
                     </a>
                     <a>
-                        <img id="StreetOutlawsPoster" src="image/StreetOutlaws.jpg" alt="Poster 4" style="cursor: pointer;">
+                        <img id="StreetOutlawsPoster" src="image/StreetOutlaws.jpg" alt="Poster 6" style="cursor: pointer;">
+                    </a>
+                    <a>
+                        <img id="SquattersPoster" src="image/Squatter.jpg" alt="Poster 7" style="cursor: pointer;">
                     </a>
                 </div>
                 <button class="s3-nav-button s3-right-button" onclick="s3ShowNextSlide()">›</button>
@@ -186,11 +189,15 @@
                 <div class="s4-slide">
                     <img src="image/photographies/photo10.jpeg" alt="Image 3">
                 </div>
+                <div class="s4-slide">
+                    <img src="image/photographies/photo11.jpeg" alt="Image 3">
+                </div>
                 <!-- Add more slides as needed -->
 
                 <!-- Slide Indicators -->
                 <div class="s4-indicator-container">
                     <span class="s4-indicator s4-active-indicator" onclick="currentSlide(0)"></span>
+                    <span class="s4-indicator"></span>
                     <span class="s4-indicator"></span>
                     <span class="s4-indicator"></span>
                     <span class="s4-indicator"></span>
@@ -380,6 +387,11 @@
                 title: "Street Outlaws", 
                 text: "Raw, authentic stories from the streets. I contributed to production and event coverage during competitive racing events, capturing authentic narrative content for this motorsports-focused series.",
                 images: ["image/bts/StreetOutlaws1.jpg", "image/bts/StreetOutlaws2.jpg"]
+            },
+            {
+                title: "Squatters",
+                text: "Media managed and assisted a traveling team bent on helping homeowners reclaim their properties from illegal occupiers, often at high stakes.",
+                images: ["image/bts/Squatters1.jpg", "image/bts/Squatters2.jpg", "image/bts/Squatters3.jpg"]
             }
         ];
         
@@ -391,44 +403,55 @@
         const s3PosterText = document.getElementById('s3-poster-text');
         const s3PosterPhotoImg = document.querySelector('.s3-poster-info-photo img');
 
-        function updateS3PosterInfo() {
+        function getCurrentS3PosterImages() {
             const currentSet = s3PosterInfoData[s3InfoCurrentSetIndex];
+            return (currentSet.images && currentSet.images.length) ? currentSet.images : ['image.jpg'];
+        }
 
-            // Update title and text
+        function displayS3PosterInfo() {
+            const currentSet = s3PosterInfoData[s3InfoCurrentSetIndex];
+            const images = getCurrentS3PosterImages();
+
+            if (s3InfoCurrentImageIndex >= images.length) {
+                s3InfoCurrentImageIndex = 0;
+            }
+
             if (s3PosterTitle) s3PosterTitle.textContent = currentSet.title;
             if (s3PosterText) s3PosterText.textContent = currentSet.text;
 
-            // Determine images for this set (fallback to placeholder)
-            const images = (currentSet.images && currentSet.images.length) ? currentSet.images : ['image.jpg'];
-            const imageIndex = s3InfoCurrentImageIndex % images.length;
-            const imageSrc = images[imageIndex] || 'image.jpg';
-
-            // Update photo element
+            const imageSrc = images[s3InfoCurrentImageIndex] || 'image.jpg';
             if (s3PosterPhotoImg) {
                 s3PosterPhotoImg.src = imageSrc;
-                s3PosterPhotoImg.alt = `${currentSet.title} BTS ${imageIndex + 1}`;
+                s3PosterPhotoImg.alt = `${currentSet.title} BTS ${s3InfoCurrentImageIndex + 1}`;
             }
+        }
 
-            // Advance to next image
+        function advanceS3PosterInfo() {
+            const images = getCurrentS3PosterImages();
             s3InfoCurrentImageIndex++;
-            
-            // If user hasn't clicked a poster, switch to next set when images exhausted
-            if (!s3UserClickedPoster) {
-                if (s3InfoCurrentImageIndex >= images.length) {
+
+            if (s3InfoCurrentImageIndex >= images.length) {
+                if (s3UserClickedPoster) {
+                    s3InfoCurrentImageIndex = 0;
+                } else {
                     s3InfoCurrentSetIndex = (s3InfoCurrentSetIndex + 1) % s3PosterInfoData.length;
                     s3InfoCurrentImageIndex = 0;
                 }
-            } else {
-                // If user clicked a poster, loop only through this set's images
-                if (s3InfoCurrentImageIndex >= images.length) {
-                    s3InfoCurrentImageIndex = 0;
-                }
             }
+
+            displayS3PosterInfo();
         }
-        
+
+        function resetS3PosterSlideshow() {
+            if (s3SlideshowInterval) {
+                clearInterval(s3SlideshowInterval);
+            }
+            s3SlideshowInterval = setInterval(advanceS3PosterInfo, 10000);
+        }
+
         // Start the slideshow - display first item immediately, then update every 10 seconds
-        updateS3PosterInfo();
-        s3SlideshowInterval = setInterval(updateS3PosterInfo, 10000);
+        displayS3PosterInfo();
+        resetS3PosterSlideshow();
         
         // Assign data-index to original posters so clones inherit the index
         Array.from(s3Posters).forEach((poster, index) => {
@@ -451,9 +474,20 @@
             if (!isNaN(idx)) {
                 s3InfoCurrentSetIndex = idx % s3PosterInfoData.length;
                 s3InfoCurrentImageIndex = 0;
-                updateS3PosterInfo();
+                displayS3PosterInfo();
+                resetS3PosterSlideshow();
             }
         });
+
+        const s3PosterPhotoContainer = document.querySelector('.s3-poster-info-photo');
+        if (s3PosterPhotoContainer) {
+            s3PosterPhotoContainer.style.cursor = 'pointer';
+            s3PosterPhotoContainer.addEventListener('click', function() {
+                s3UserClickedPoster = true;
+                advanceS3PosterInfo();
+                resetS3PosterSlideshow();
+            });
+        }
         
         function s3ShowNextSlide() {
             s3CurrentPosterIndex++;
